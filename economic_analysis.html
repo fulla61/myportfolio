@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界経済の成長見通し分析 - Yun ポートフォリオ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Data Driven</a>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html">プロジェクト</a></li>
+                <li><a href="data-science-journey.html">学習の軌跡</a></li>
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container analysis-content">
+            <section id="outlook-intro" class="analysis-section fade-in-section">
+                <h2>世界経済の成長見通し (2022年～2026年) - 分析と可視化</h2>
+                <p>
+                    このページでは、提供された世界経済の成長見通しに関するテキストデータを基に、主要なトレンドを可視化し、要点をまとめました。
+                    データは手動でCSVファイルに変換し、Python (Pandas, Matplotlib, Seaborn) を用いてグラフを生成しています。
+                </p>
+                <p>
+                    <strong>元データ概要：</strong> 世界全体の経済成長率、地域・国別の動向、所得グループ別の見通し、世界貿易と商品価格の予測などが含まれます。
+                </p>
+                <p>
+                    <strong>使用ツール：</strong> Python (Pandas, Matplotlib, Seaborn), 手動データ入力
+                </p>
+            </section>
+
+            <section id="overall-trend" class="analysis-section fade-in-section">
+                <h2>全体傾向</h2>
+                <img src="images/economic_analysis_outlook/overall_economic_growth_trend.png" alt="世界全体の経済成長率見通し">
+                <p>
+                    世界全体の経済成長率は、2022年の3.2%から2023年には2.7%に減速し、その後2024年から2026年にかけて2.7%で横ばいと予測されています。
+                    購買力平価（PPP）で調整した場合は、やや高めの3.2%前後で安定する見込みです。
+                </p>
+            </section>
+
+            <section id="regional-trends" class="analysis-section fade-in-section">
+                <h2>地域・国別の動向</h2>
+                <img src="images/economic_analysis_outlook/selected_countries_growth_trend.png" alt="主要国・地域の経済成長率見通し">
+                <p>
+                    <strong>先進国全体</strong>では、2023年以降は1.7%前後の緩やかな成長が続くと見られています。
+                    <strong>アメリカ</strong>は2023年の2.9%から徐々に減速し2026年には2.0%に、<strong>ユーロ圏</strong>は2023年の低調な0.4%から徐々に回復し2026年には1.2%へと予測されています。
+                    <strong>日本</strong>は2024年に一時ゼロ成長となるものの、翌年以降は1%前後の回復が見込まれます。
+                </p>
+                <p>
+                    <strong>新興国・途上国（EMDEs）全体</strong>では、2023年は4.2%、以後も4%台の安定した成長が予測されています。
+                    地域別に見ると、<strong>中国</strong>は2023年に5.2%と回復後、徐々に減速して2026年には4.0%に。
+                    <strong>インド</strong>は安定した6.5～6.7%の成長が見込まれます。
+                    <strong>ロシア</strong>は2023年に3.6%と回復後、2026年には1.1%まで減速する見通しです。
+                    <strong>ブラジル</strong>は2024年に3.2%と好調ですが、2026年には2.3%へ減速すると予測されています。
+                    他の地域や国についても、それぞれの経済状況に応じた見通しが示されています。（詳細はCSVデータおよび提供テキスト参照）
+                </p>
+            </section>
+
+            <section id="income-group-trends" class="analysis-section fade-in-section">
+                <h2>特記事項（所得グループ別）</h2>
+                <img src="images/economic_analysis_outlook/income_group_growth_latest_year.png" alt="所得グループ別 経済成長率見通し">
+                <p>
+                    所得グループ別に見ると、<strong>高所得国</strong>の成長率は1.7～1.9%前後で安定すると予測されています。
+                    <strong>中所得国</strong>は4.1～4.6%と比較的高めの成長が見込まれます。
+                    <strong>低所得国</strong>は2023年に3.0%と一時落ち込むものの、2026年には5.9%に回復すると予測されています。
+                </p>
+            </section>
+
+            <section id="trade-commodity-outlook" class="analysis-section fade-in-section">
+                <h2>世界貿易と商品価格の見通し</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h4>世界貿易量の成長率</h4>
+                        <img src="images/economic_analysis_outlook/world_trade_volume_trend.png" alt="世界貿易量の成長率見通し">
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h4>原油価格（ブレント）</h4>
+                        <img src="images/economic_analysis_outlook/oil_price_brent_trend.png" alt="原油価格（ブレント）の見通し">
+                    </div>
+                </div>
+                <p>
+                    <strong>世界貿易量</strong>は、2023年に0.8%とほぼ停滞した後、2024年以降は3.2%程度まで回復する見通しです。
+                    <strong>商品価格（ドルベース）</strong>については、世界銀行商品価格指数（2022年=100）が2023年の108.0から2026年には96.7へと緩やかに下落すると予測されています。
+                    特に<strong>エネルギー価格</strong>の下落が大きく、2022年の152.6から2026年には91.7まで減少する見込みです。
+                    <strong>原油価格（ブレント）</strong>は2022年の99.8ドルから2026年には71.0ドルへと予測されています。
+                </p>
+            </section>
+
+            <section id="outlook-conclusion" class="analysis-section fade-in-section">
+                <h2>結論と補足</h2>
+                <p>
+                    提供されたデータに基づく分析からは、世界経済がパンデミック後の回復と地政学的要因の中で、複雑な調整局面にあることが示唆されます。
+                    全体としては緩やかな成長が見込まれるものの、地域や国、所得グループによってその様相は大きく異なります。
+                    新興国・途上国が引き続き世界経済の成長を牽引する一方で、先進国はインフレ抑制と安定成長のバランスを模索する状況が続くと考えられます。
+                    世界貿易の回復や商品価格の動向も、今後の経済見通しに影響を与える重要な要素です。
+                </p>
+                <p>
+                    <em>補足：本予測は市場為替レートや購買力平価ベースで計算されており、頻繁に更新される可能性があります。一部の国（トルクメニスタン、ベネズエラ）は信頼できるデータがないため集計から除外されています。このページで表示しているグラフや要約は、提供された特定時点のテキストデータに基づいています。</em>
+                </p>
+                <p class="text-center mt-2">
+                    <a href="projects.html" class="cta-button-secondary">← プロジェクト一覧へ戻る</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Yun. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在庫管理Webアプリケーション開発 - Yun Portfolio</title>
+    <meta name="description" content="PHP, MySQL, Reactを用いた在庫管理Webアプリケーションの開発プロジェクト詳細。">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Data Driven</a>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html" class="active">プロジェクト</a></li> <!-- このセクションがアクティブ -->
+                <li><a href="data-science-journey.html">学習の軌跡</a></li>
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container analysis-content"> <!-- analysis-contentクラスを流用 -->
+            <section id="project-a-intro" class="analysis-section fade-in-section">
+                <h2>プロジェクト：在庫管理Webアプリケーション</h2>
+                <p class="project-period">開発期間：YYYY年MM月～YYYY年MM月 (例: 3ヶ月)</p>
+                <p>
+                    中小規模の小売店やオンラインショップ向けに、シンプルで直感的に操作できる在庫管理Webアプリケーションを開発しました。
+                    商品の登録、在庫数の更新、入出庫履歴の確認といった基本的な在庫管理機能を備え、業務効率の向上を目指しました。
+                </p>
+                <p>
+                    <!-- アプリのデモURLがあればリンク (例) -->
+                    <!-- <a href="[デモアプリのURL]" target="_blank" rel="noopener noreferrer" class="cta-button-secondary">デモアプリを見る</a> -->
+                    <!-- GitHubリポジトリがあればリンク (例) -->
+                    <!-- <a href="[GitHubリポジトリURL]" target="_blank" rel="noopener noreferrer" class="cta-button-secondary">GitHubリポジトリ</a> -->
+                </p>
+            </section>
+
+            <section id="project-a-tech" class="analysis-section fade-in-section">
+                <h2>使用技術スタック</h2>
+                <ul class="tech-stack-list">
+                    <li><strong>バックエンド:</strong> PHP, MySQL</li>
+                    <li><strong>フロントエンド:</strong> React, JavaScript (ES6+), HTML5, CSS3</li>
+                    <li><strong>API連携:</strong> RESTful API (自作)</li>
+                    <li><strong>バージョン管理:</strong> Git, GitHub</li>
+                    <li><strong>その他:</strong> (例: Dockerによる開発環境構築)</li>
+                </ul>
+            </section>
+
+            <section id="project-a-features" class="analysis-section fade-in-section">
+                <h2>主な機能</h2>
+                <div class="features-grid"> <!-- CSSで2カラムなどに調整想定 -->
+                    <div class="feature-item">
+                        <!-- <i class="fas fa-box-open"></i> アイコン例 -->
+                        <h4>商品管理</h4>
+                        <p>商品名、SKU、カテゴリ、価格、画像などの情報を登録・編集・削除できます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <!-- <i class="fas fa-warehouse"></i> アイコン例 -->
+                        <h4>在庫追跡</h4>
+                        <p>リアルタイムで在庫数を更新し、現在の在庫状況を一覧で確認できます。在庫僅少アラート機能も検討。</p>
+                    </div>
+                    <div class="feature-item">
+                        <!-- <i class="fas fa-history"></i> アイコン例 -->
+                        <h4>入出庫履歴</h4>
+                        <p>商品の入庫・出庫の履歴を記録し、日付や商品名で検索・フィルタリングできます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <!-- <i class="fas fa-search"></i> アイコン例 -->
+                        <h4>検索・フィルタリング</h4>
+                        <p>商品名やカテゴリなどで商品を効率的に検索できます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <!-- <i class="fas fa-users"></i> アイコン例 -->
+                        <h4>ユーザー管理 (オプション)</h4>
+                        <p>複数のユーザーアカウントを作成し、権限に応じた操作を許可できます。(管理者、一般ユーザーなど)</p>
+                    </div>
+                    <div class="feature-item">
+                        <!-- <i class="fas fa-chart-line"></i> アイコン例 -->
+                        <h4>簡易レポート (オプション)</h4>
+                        <p>期間別の在庫変動や人気商品などの簡単なレポートを表示できます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="project-a-screenshots" class="analysis-section fade-in-section">
+                <h2>アプリケーションのスクリーンショット</h2>
+                <!-- スクリーンショット画像は images/project_a_screenshots/ に配置想定 -->
+                <div class="screenshots-grid">
+                    <img src="https://via.placeholder.com/600x400/1B263B/EAFDFC?text=App+Dashboard"
+                        alt="在庫管理アプリ ダッシュボード">
+                    <p class="caption">ダッシュボード画面：主要な在庫情報とアラートを一目で確認</p>
+
+                    <img src="https://via.placeholder.com/600x400/1B263B/EAFDFC?text=Product+List" alt="在庫管理アプリ 商品一覧">
+                    <p class="caption">商品一覧画面：検索やソートが可能</p>
+
+                    <img src="https://via.placeholder.com/600x400/1B263B/EAFDFC?text=Product+Edit" alt="在庫管理アプリ 商品編集">
+                    <p class="caption">商品編集画面：詳細情報を直感的に入力</p>
+                </div>
+            </section>
+
+            <section id="project-a-process" class="analysis-section fade-in-section">
+                <h2>開発プロセスと工夫した点</h2>
+                <h4>課題と目的</h4>
+                <p>
+                    従来のExcelや手作業による在庫管理では、入力ミスやリアルタイム性の欠如、情報共有の難しさといった課題がありました。
+                    本アプリケーションは、これらの課題を解決し、誰でも簡単に使えるデジタルな在庫管理システムを提供することを目的としました。
+                </p>
+                <h4>設計と実装</h4>
+                <p>
+                    バックエンドはPHPでRESTful
+                    APIを構築し、MySQLデータベースと連携させました。API設計では、フロントエンドが必要とするデータを効率的に取得・更新できるよう、エンドポイントの設計に注力しました。
+                    フロントエンドはReactを採用し、コンポーネントベースでの開発により再利用性とメンテナンス性の高いUIを実現しました。状態管理にはContext
+                    API（またはReduxなどのライブラリ）を検討しました。
+                    レスポンシブデザインにも配慮し、PCだけでなくタブレットからの操作も考慮しました。
+                </p>
+                <h4>工夫した点・苦労した点</h4>
+                <ul>
+                    <li><strong>UI/UXデザイン:</strong>
+                        専門のデザイナーではないため、既存の優れたUIを参考にしつつ、ユーザーが迷わず操作できるようなシンプルで分かりやすいインターフェースを目指しました。特に、入力フォームのバリデーションやフィードバックの表示に工夫を凝らしました。
+                    </li>
+                    <li><strong>パフォーマンス:</strong>
+                        商品数が増えた場合でも表示が遅くならないよう、APIからのデータ取得方法やフロントエンドでのレンダリング効率を考慮しました（例：ページネーション、遅延読み込みなど）。</li>
+                    <li><strong>セキュリティ:</strong>
+                        SQLインジェクション対策やXSS対策など、基本的なセキュリティ対策をバックエンド側に実装しました。ユーザー認証機能（オプション）を実装する場合は、パスワードのハッシュ化なども行います。
+                    </li>
+                </ul>
+            </section>
+
+            <section id="project-a-results" class="analysis-section fade-in-section">
+                <h2>成果と今後の展望</h2>
+                <p>
+                    このプロジェクトを通じて、Webアプリケーションの企画から設計、開発、テストまでの一連のプロセスを経験し、フルスタックな開発スキルを実践的に向上させることができました。
+                    特に、PHPによるAPI構築とReactを用いたSPA（Single Page Application）開発の連携について深く理解できました。
+                </p>
+                <p>
+                    今後の展望としては、バーコードリーダー連携機能の追加、より詳細な分析レポート機能の実装、他のECプラットフォームとのAPI連携などを検討しています。
+                    また、ユーザーからのフィードバックを収集し、継続的に改善していく予定です。
+                </p>
+                <p class="text-center mt-2">
+                    <a href="projects.html" class="cta-button-secondary">← プロジェクト一覧へ戻る</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Yun. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

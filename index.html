@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ↓ 各ページで<title>を変更 -->
+    <title>Yun Portfolio -ホーム画面-</title>
+    <meta name="description" content="あなたのポートフォリオサイトです。データサイエンスのスキルと実績を紹介します。">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesomeなどのアイコンライブラリを読み込む場合はここ -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+</head>
+<!-- ↓ skills.html の場合は <body class="skills-page-body"> のようにクラスを追加 -->
+
+<body>
+    <header>
+        <nav class="container"> <!-- navにもcontainerクラスを適用して幅を揃える -->
+            <a href="index.html" class="logo">Data Driven</a> <!-- ロゴもリンクにする -->
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html">プロジェクト</a></li>
+                <li><a href="data-science-journey.html">学習の軌跡</a></li>
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PAGE CONTENT START -->
+        <!-- 各ページのユニークなコンテンツがここに入ります -->
+        <!-- PAGE CONTENT END -->
+    </main>
+
+    <!-- <footer>
+        <div class="container"> フッターにもcontainerを追加する場合 -->
+    <!-- <p>© 2024 あなたの名前. All Rights Reserved.</p> -->
+    <!-- <div class="social-links"> -->
+    <!-- 例: SNSリンク (Font Awesome使用想定) -->
+    <!-- <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a> -->
+    <!-- <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a> -->
+    <!-- </div>
+        </div>
+    </footer> -->
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
+<!-- PAGE CONTENT START -->
+<section id="hero">
+    <div class="hero-content">
+        <h1>Data Driven</h1>
+        <p class="subtitle">ECサイト売上6.9倍を達成した分析力で、ビジネスの課題を解決します。</p>
+        <p class="catchphrase">Power & Passion</p>
+        <a href="projects.html" class="cta-button">制作実績を見る</a>
+    </div>
+</section>
+
+<section id="overview" class="container fade-in-section">
+    <h2>Welcome to My Portfolio</h2>
+    <div class="profile-intro">
+        <img src="images/profile-photo.jpg" alt="あなたの名前 プロフィール写真"
+            class="profile-photo-circular profile-photo-small-circular">
+        <div class="text1"> <!-- テキストをdivで囲む -->
+            <p>
+                データサイエンスとプログラミングの力で、価値あるインサイトを引き出し、ビジネスの成長と課題解決に貢献します。
+                エステティシャンから映像制作者、ECマーケターを経て培った多角的な視点と、
+                データサイエンス学習で得た論理的思考力を融合させ、新たな価値を創造します。
+            </p>
+            <p><a href="about.html" class="cta-button-secondary">詳しい経歴はこちら →</a></p>
+        </div>
+    </div>
+</section>
+
+<section id="skill-highlights" class="container fade-in-section">
+    <h2>Core Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-item">
+            <!-- <i class="fas fa-brain"></i> Font Awesome使用時のアイコン例 -->
+            <h3>Python & Data Science</h3>
+            <p>データ分析 (Pandas, NumPy), 機械学習 (Scikit-learn), データ可視化 (Matplotlib, Seaborn)</p>
+        </div>
+        <div class="skill-item">
+            <!-- <i class="fas fa-database"></i> -->
+            <h3>SQL & Databases</h3>
+            <p>データベース設計, クエリ最適化, データ抽出 (MySQL, PostgreSQL)</p>
+        </div>
+        <div class="skill-item">
+            <!-- <i class="fas fa-chart-line"></i> -->
+            <h3>Visualization & BI</h3>
+            <p>Tableau, Power BI (学習中/経験に応じて), インタラクティブなダッシュボード作成</p>
+        </div>
+    </div>
+    <p class="text-center mt-2"><a href="skills.html" class="cta-button-secondary">全てのスキルを見る →</a></p>
+</section>
+
+<section id="project-highlights" class="container fade-in-section">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="images/titanic_analysis_thumbnail.png" alt="Titanic Data Analysis Thumbnail">
+            <!-- プレースホルダーまたは実際の画像 -->
+            <div class="project-card-content">
+                <h3>Titanic Survival Analysis</h3>
+                <p>Kaggleの有名データセットを用い、乗客の生存要因を探索的データ分析（EDA）で明らかにしました。</p>
+                <p class="technologies"><strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+                <a href="titanic_analysis.html" class="details-link">View Analysis</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="images/economic_analysis_thumbnail.png" alt="Economic Indicators Analysis Thumbnail">
+            <!-- プレースホルダーまたは実際の画像 -->
+            <div class="project-card-content">
+                <h3>Global Economic Indicators Analysis</h3>
+                <p>World Bank APIから取得したデータに基づき、主要国の経済指標を比較・時系列分析しました。</p>
+                <p class="technologies"><strong>Tech:</strong> Python, wbdata, Pandas, Matplotlib</p>
+                <a href="economic_analysis.html" class="details-link">View Analysis</a>
+            </div>
+        </div>
+        <!-- 他のプロジェクトがあればここに追加 -->
+    </div>
+    <p class="text-center mt-2"><a href="projects.html" class="cta-button-secondary">全てのプロジェクトを見る →</a></p>
+</section>
+
+<section id="ds-journey-promo" class="ds-promo-bg fade-in-section"> <!-- containerなしで全幅にすることも -->
+    <div class="container"> <!-- 内容はコンテナに入れる -->
+        <h2>My Data Science Journey</h2>
+        <p>データサイエンティストを目指す私の学習の軌跡や、取り組んだ課題、得られた知見を紹介しています。共に成長し、新たな価値を創造しましょう。</p>
+        <a href="data-science-journey.html" class="cta-button-secondary">学習成果を見る</a>
+    </div>
+</section>
+<!-- PAGE CONTENT END -->

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECサイト顧客行動分析と戦略提案 - Yun Portfolio</title>
+    <meta name="description" content="実際のECサイトデータを用いた顧客行動分析、セグメンテーション、マーケティング戦略提案プロジェクトの詳細。">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Data Driven</a>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html" class="active">プロジェクト</a></li>
+                <li><a href="data-science-journey.html">学習の軌跡</a></li>
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container analysis-content">
+            <section id="project-b-intro" class="analysis-section fade-in-section">
+                <h2>プロジェクト：ECサイト顧客行動分析と戦略提案 (ブランド時計リユース事業)</h2>
+                <p class="project-period">分析期間：YYYY年MM月～YYYY年MM月 (例: 2ヶ月)</p>
+                <p>
+                    このプロジェクトでは、ブランド時計リユース事業のECサイトにおける（匿名化された）購買データと行動ログを想定し、顧客の行動パターン、購買傾向、および潜在的な離脱要因を分析しました。
+                    分析から得られた洞察に基づき、顧客セグメンテーションを行い、各セグメントに最適化された具体的なマーケティング戦略を立案・提案しました。
+                    （以下で示すグラフは、提示された顧客行動の特徴を元に生成したサンプルデータに基づいています。）
+                </p>
+                <p>
+                    <!-- GitHubリポジトリがあればリンク (例) -->
+                    <!-- <a href="[GitHubリポジトリURL]" target="_blank" rel="noopener noreferrer" class="cta-button-secondary">GitHubリポジトリ (コードと分析ノートブック)</a> -->
+                </p>
+            </section>
+
+            <section id="project-b-tech" class="analysis-section fade-in-section">
+                <h2>使用技術・ツール</h2>
+                <ul class="tech-stack-list">
+                    <li><strong>データ分析:</strong> Python (Pandas, NumPy, Scikit-learn)</li>
+                    <li><strong>データベース:</strong> SQL (データ抽出、集計 - 本プロジェクトではCSVデータ使用)</li>
+                    <li><strong>機械学習:</strong> クラスタリング (RFM分析に基づくセグメンテーション)</li>
+                    <li><strong>データ可視化:</strong> Matplotlib, Seaborn, (Tableau)</li>
+                    <li><strong>その他:</strong> Jupyter Notebook (分析環境)</li>
+                </ul>
+            </section>
+
+            <section id="project-b-process" class="analysis-section fade-in-section">
+                <h2>分析プロセスとアプローチ</h2>
+                <h4>1. 課題定義とデータ理解</h4>
+                <p>
+                    ブランド時計リユース事業における課題（例：通常顧客の育成、高頻度購入者（転売ヤー可能性）の特定、初回購入転換率の向上など）を定義し、想定される顧客行動データ（購買履歴、初回アクセスからの転換期間、年齢層、リピート購入など）の特徴を把握しました。
+                </p>
+                <h4>2. データ準備と探索的データ分析 (EDA)</h4>
+                <p>
+                    提示された顧客行動の特徴に基づき、Pythonを用いて分析用ダミーデータを生成。
+                    RFM指標（最終購入日、購入頻度、購入金額）の計算、初回購入までの日数、年齢層別の分布などを可視化し、顧客行動の全体像と特徴的なパターンを把握しました。
+                </p>
+                <h4>3. 顧客セグメンテーション (RFM分析)</h4>
+                <p>
+                    RFM指標をスコアリングし、顧客を「優良顧客」「高頻度顧客（転売ヤー候補）」「アクティブ通常顧客」「新規・低頻度顧客」「離脱懸念・低価値顧客」などのセグメントに分類しました。
+                    各セグメントの特性を詳細に分析しました。
+                </p>
+                <h4>4. マーケティング戦略の提案</h4>
+                <p>
+                    上記の分析結果とセグメンテーションに基づき、各顧客セグメントに対して具体的なマーケティング施策を提案しました。
+                    例：優良顧客への特別オファー、高頻度顧客への対応検討、新規顧客のオンボーディング強化、初回購入までの期間が長い顧客へのリターゲティングなど。
+                </p>
+            </section>
+
+            <section id="project-b-visualizations" class="analysis-section fade-in-section">
+                <h2>主な分析結果と可視化 (例)</h2>
+                <p>Python (Matplotlib/Seaborn) で作成した代表的な可視化例です。（以下のグラフは仮のデータに基づいています）</p>
+                <div class="screenshots-grid"> <!-- screenshots-gridクラスを流用 -->
+                    <div>
+                        <img src="images/project_b_outputs/rfm_segment_distribution.png" alt="RFM分析による顧客セグメント分布">
+                        <p class="caption">RFM分析に基づく顧客セグメントの構成比</p>
+                    </div>
+                    <div>
+                        <img src="images/project_b_outputs/customer_segments_mean_monetary.png" alt="顧客セグメント別 平均購買額">
+                        <p class="caption">各顧客セグメントの平均購買額の比較</p>
+                    </div>
+                    <div>
+                        <img src="images/project_b_outputs/conversion_time_distribution.png" alt="初回アクセスから購入までの日数分布">
+                        <p class="caption">初回アクセスから実際に購入に至るまでの期間の顧客分布</p>
+                    </div>
+                    <div>
+                        <img src="images/project_b_outputs/age_group_customer_counts.png" alt="年齢層別 購入顧客数">
+                        <p class="caption">主な顧客の年齢層構成（購入顧客数ベース）</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="project-b-results" class="analysis-section fade-in-section">
+                <h2>成果と考察</h2>
+                <p>
+                    この（仮想データを用いた）分析プロジェクトを通じて、ECサイトの顧客データからビジネス価値を引き出すためのデータ分析プロセスをシミュレーションしました。
+                    RFM分析による顧客理解、初回購入までの行動パターンの把握、主要顧客層の特定といった分析は、実際のビジネスにおいても非常に有効です。
+                </p>
+                <h4>主な洞察と提案内容の例（仮想）：</h4>
+                <ul>
+                    <li>「優良顧客」セグメントはLTVが高く、維持・育成が最重要であることを再確認。</li>
+                    <li>「高頻度顧客（転売ヤー候補）」セグメントの存在は、ビジネスモデルに応じた対応（監視、制限、あるいは卸売りの可能性検討など）が必要であることを示唆。</li>
+                    <li>初回購入の大部分がサイトアクセス当日または1週間以内に発生しており、この期間の顧客体験とコンバージョン施策が極めて重要。35日を超える顧客へのアプローチは費用対効果を慎重に検討。</li>
+                    <li>40代が最も重要な顧客層であり、次いで30代。これらの層に響く商品ラインナップやマーケティングメッセージが効果的。</li>
+                </ul>
+                <p>
+                    これらの分析結果を基に具体的な施策（例：セグメント別メールマーケティング、初回購入者向け限定オファー、特定年齢層向けキャンペーンなど）を実行することで、顧客エンゲージメントの向上、LTVの増加、より効率的なマーケティング予算配分が期待できます。
+                </p>
+                <p class="text-center mt-2">
+                    <a href="projects.html" class="cta-button-secondary">← プロジェクト一覧へ戻る</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Yun. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

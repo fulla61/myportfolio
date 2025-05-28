@@ -1,0 +1,23 @@
+Global Economic Outlook - Analysis Summary (2022-2026)
+=======================================================================
+
+This analysis is based on the provided CSV data (`world_economic_outlook.csv`).
+
+Generated Graphs:
+- income_group_growth_latest_year.png
+- oil_price_brent_trend.png
+- overall_economic_growth_trend.png
+- selected_countries_growth_trend.png
+- world_trade_volume_trend.png
+
+Key Points:
+1. Global growth is projected to be flat at 2.7%, while PPP adjusted growth is stable around 3.2%.
+
+2. US shows a slowdown, Euro area and Japan a modest recovery, China slows, India shows stable growth.
+
+3. In 2026, high-income countries are projected around 1.8%, middle-income around 4.3%, and low-income around 5.9% (2026 forecast).
+
+4. World trade volume is expected to recover to around 3.2% after stagnation in 2023.
+
+5. Brent crude oil price is projected to fall from $99.8 in 2022 to $71.0 in 2026.
+

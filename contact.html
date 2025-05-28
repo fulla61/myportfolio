@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yun - お問い合わせ</title>
+    <meta name="description" content="お問い合わせページです。お気軽にご連絡ください。">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesomeなどが必要な場合はここに追加 -->
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Data Driven</a>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html">プロジェクト</a></li>
+                <li><a href="data-science-journey.html">学習の軌跡</a></li>
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-section" class="container fade-in-section">
+            <h2>Contact - お問い合わせ</h2>
+            <p class="mb-2">
+                ご興味をお持ちいただきありがとうございます。プロジェクトのご相談、お仕事のご依頼、その他ご質問などございましたら、お気軽に以下のフォームよりお問い合わせください。
+                3営業日以内にご返信させていただきます。
+            </p>
+
+            <!-- フォーム送信後のメッセージ表示エリア -->
+            <div id="form-message" style="display: none; margin-bottom: 1rem; padding: 1rem; border-radius: 5px;"></div>
+
+            <form id="contact-form" method="POST">
+                <!-- action属性はJavaScriptで設定するため、ここでは空にするかコメントアウトも可 -->
+                <!-- action="ここにGASのウェブアプリURLを貼り付け" -->
+                <div class="form-group">
+                    <label for="name">お名前 (Name) <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス (Email) <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">件名 (Subject)</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">メッセージ (Message) <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit">送信する (Send Message)</button>
+                </div>
+            </form>
+            <p class="mt-2 text-center">
+                お急ぎの場合は、<a href="mailto:あなたのメールアドレス">あなたのメールアドレス</a> まで直接ご連絡ください。
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Yun. All Rights Reserved.</p> <!-- 年号や名前を適宜変更してください -->
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- フォーム送信処理用のJavaScriptをここに追加 -->
+    <!-- ... (既存の script.js の読み込み) ... -->
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        // ★★★ GASのウェブアプリURLをここに貼り付けてください ★★★
+        const gasUrl = 'https://script.google.com/macros/s/AKfycbz3ACjEQ3hMKFsK6z6H7P1HHbhGMMs-AjdNvMWoC81zzy_wH07AWCNMBzUQvM_sFQ5d/exec';
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // フォームの通常の送信をキャンセル
+
+                const formData = new FormData(contactForm);
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+
+                // 送信中表示
+                submitButton.disabled = true;
+                submitButton.textContent = '送信中...';
+                formMessage.style.display = 'none'; // 前回のメッセージを隠す
+
+                fetch(gasUrl, {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json()) // GASからの応答をJSONとしてパース
+                    .then(data => {
+                        formMessage.style.display = 'block';
+                        if (data.status === 'success') {
+                            formMessage.textContent = data.message || 'お問い合わせありがとうございます。メッセージは正常に送信されました。';
+                            formMessage.style.backgroundColor = '#d4edda'; // 成功時の背景色 (緑系)
+                            formMessage.style.color = '#155724'; // 成功時の文字色
+                            contactForm.reset(); // フォームの内容をリセット
+                        } else {
+                            formMessage.textContent = data.message || 'エラーが発生しました。もう一度お試しください。';
+                            formMessage.style.backgroundColor = '#f8d7da'; // エラー時の背景色 (赤系)
+                            formMessage.style.color = '#721c24'; // エラー時の文字色
+                            console.error('Error from GAS:', data.message);
+                        }
+                    })
+                    .catch(error => {
+                        formMessage.style.display = 'block';
+                        formMessage.textContent = '送信中にエラーが発生しました。ネットワーク接続を確認して再度お試しください。';
+                        formMessage.style.backgroundColor = '#f8d7da';
+                        formMessage.style.color = '#721c24';
+                        console.error('Fetch error:', error);
+                    })
+                    .finally(() => {
+                        // 送信ボタンを元に戻す
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ↓ 各ページで<title>を変更 -->
+    <title>Yun -プロジェクト-</title>
+    <meta name="description" content="あなたのポートフォリオサイトです。データサイエンスのスキルと実績を紹介します。">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesomeなどのアイコンライブラリを読み込む場合はここ -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+</head>
+<!-- ↓ skills.html の場合は <body class="skills-page-body"> のようにクラスを追加 -->
+
+<body>
+    <header>
+        <nav class="container"> <!-- navにもcontainerクラスを適用して幅を揃える -->
+            <a href="index.html" class="logo">Data Driven</a> <!-- ロゴもリンクにする -->
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html">プロジェクト</a></li>
+                <li><a href="data-science-journey.html">学習の軌跡</a></li>
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PAGE CONTENT START -->
+        <!-- 各ページのユニークなコンテンツがここに入ります -->
+        <!-- PAGE CONTENT END -->
+    </main>
+
+    <!-- <footer>
+        <div class="container"> フッターにもcontainerを追加する場合 -->
+    <!-- <p>© 2024 あなたの名前. All Rights Reserved.</p> -->
+    <!-- <div class="social-links"> -->
+    <!-- 例: SNSリンク (Font Awesome使用想定) -->
+    <!-- <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a> -->
+    <!-- <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a> -->
+    <!-- </div>
+        </div>
+    </footer> -->
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
+<!-- <title>My Projects - あなたの名前 Portfolio</title> -->
+<!-- PAGE CONTENT START -->
+<section id="projects-showcase" class="container fade-in-section">
+    <h2>Projects - 作品・実績</h2>
+    <p class="mb-2">これまでに取り組んできた主要なプロジェクトをご紹介します。各プロジェクトでは、データ分析、機械学習、Web開発など、様々な技術を駆使して課題解決や価値創造に挑戦しました。</p>
+
+    <div class="projects-grid">
+        <!-- Titanic Analysis Project Card -->
+        <div class="project-card fade-in-section">
+            <img src="images/titanic_analysis_thumbnail.png" alt="Titanic Data Analysis Thumbnail">
+            <div class="project-card-content">
+                <h3>Titanic Survival Analysis (EDA)</h3>
+                <p>
+                    Kaggleの有名なTitanicデータセットを使用し、乗客の生存に影響を与えた要因を探索的データ分析（EDA）を通じて詳細に調査しました。
+                    データの可視化を多用し、性別、年齢、客室クラスなどの特徴量が生存確率とどのように関連しているかを明らかにしました。
+                </p>
+                <p class="technologies"><strong>Technologies:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn</p>
+                <a href="titanic_analysis.html" class="details-link">View Analysis Details</a>
+            </div>
+        </div>
+
+        <!-- Economic Indicators Analysis Project Card -->
+        <div class="project-card fade-in-section">
+            <img src="images/economic_analysis_thumbnail.png" alt="Global Economic Indicators Analysis Thumbnail">
+            <div class="project-card-content">
+                <h3>Global Economic Indicators Analysis</h3>
+                <p>
+                    World Bank APIから主要経済指標（GDP成長率、一人当たりGDP、インフレ率、失業率など）を取得し、選定した複数国間での比較分析と、過去数十年にわたる時系列トレンドの分析を行いました。
+                </p>
+                <p class="technologies"><strong>Technologies:</strong> Python, wbdata, Pandas, Matplotlib, Seaborn</p>
+                <a href="economic_analysis.html" class="details-link">View Analysis Details</a>
+            </div>
+        </div>
+
+        <!-- Your Other Project 1 (Example) -->
+        <div class="project-card fade-in-section">
+            <img src="images/project_generic_thumb.png" alt="ECサイト顧客行動分析"> <!-- プレースホルダー or 実際の画像 -->
+            <div class="project-card-content">
+                <h3>ECサイト顧客行動分析</h3>
+                <p>
+                    実際のECサイトデータ（匿名化）を用い、顧客の購買パターンや離脱要因を分析。セグメンテーションを行い、ターゲットマーケティング戦略を提案。
+                </p>
+                <p class="technologies"><strong>Technologies:</strong> Python, Scikit-learn, SQL, Tableau</p>
+                <a href="project_b_details.html" class="details-link">Details (Coming Soon)</a> <!-- 詳細ページがあればリンク -->
+            </div>
+        </div>
+
+        <!-- Your Other Project 2 (Example) -->
+        <div class="project-card fade-in-section">
+            <img src="images/project_generic_thumb2.png" alt="在庫管理Webアプリ"> <!-- プレースホルダー or 実際の画像 -->
+            <div class="project-card-content">
+                <h3>Webアプリ開発</h3>
+                <p>
+                    PHPとMySQLを用いて、簡単な在庫管理Webアプリケーションを開発。フロントエンドはReactを使用。
+                </p>
+                <p class="technologies"><strong>Technologies:</strong> PHP, MySQL, React, JavaScript, HTML, CSS</p>
+                <a href="project_a_details.html" class="details-link">Details (Coming Soon)</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PAGE CONTENT END -->

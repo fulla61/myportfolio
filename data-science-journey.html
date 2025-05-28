@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学習の軌跡 - Yun Portfolio</title> <!-- ページタイトルを日本語に -->
+    <meta name="description" content="私のデータサイエンス学習の道のり、成果、そして将来の目標について紹介します。">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesomeなどのアイコンライブラリを読み込む場合はここ -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Data Driven</a>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html">プロジェクト</a></li>
+                <li><a href="data-science-journey.html" class="active">学習の軌跡</a></li> <!-- このページなのでactiveクラスを追加 -->
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PAGE CONTENT START -->
+        <section id="ds-journey-intro" class="container fade-in-section">
+            <h2>データサイエンス学習の軌跡と成長</h2> <!-- My Data Science Journey -->
+            <p>データサイエンスの世界に足を踏み入れてから現在までの学習ロードマップ、挑戦したプロジェクト、そしてこれからの目標についてご紹介します。この道のりは常に新しい発見と学びに満ちています。</p>
+        </section>
+
+        <section id="learning-roadmap" class="container fade-in-section">
+            <h3>学習ロードマップとリソース</h3> <!-- Learning Roadmap & Resources -->
+            <div class="roadmap-grid">
+                <div class="roadmap-phase">
+                    <h4>第1フェーズ：基礎スキル（統計学とPythonの基礎）</h4>
+                    <!-- Phase 1: Foundational Skills (Statistics & Python Basics) -->
+                    <ul>
+                        <li><strong>学習内容：</strong>記述統計学/推測統計学、Pythonの基礎（データ型、制御構文、関数、オブジェクト指向プログラミングの基本）、NumPy/Pandasの必須事項。
+                        </li> <!-- Learned: ... -->
+                        <li><strong>主要リソース：</strong>[書籍名A], [オンラインコースB (例：Coursera "みんなのPython")]</li>
+                        <!-- Key Resources: ... -->
+                        <li><strong>期間：</strong> YYYY年MM月 - YYYY年MM月</li> <!-- Period: ... -->
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h4>第2フェーズ：データ分析と可視化の習熟</h4> <!-- Phase 2: Data Analysis & Visualization Mastery -->
+                    <ul>
+                        <li><strong>学習内容：</strong>データクリーニング、前処理、探索的データ分析（EDA）、Matplotlib/Seabornを用いた高度な可視化、データを用いたストーリーテリング。
+                        </li> <!-- Learned: ... -->
+                        <li><strong>主要リソース：</strong>[書籍名C], [UdemyコースD "Pythonで学ぶデータサイエンスと機械学習ブートキャンプ"]</li>
+                        <!-- Key Resources: ... -->
+                        <li><strong>期間：</strong> YYYY年MM月 - YYYY年MM月</li> <!-- Period: ... -->
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h4>第3フェーズ：機械学習の基礎と実践</h4> <!-- Phase 3: Machine Learning Fundamentals & Practice -->
+                    <ul>
+                        <li><strong>学習内容：</strong>教師あり学習（回帰、分類）、教師なし学習（クラスタリング）、モデル評価指標、Scikit-learnを用いたモデル構築。</li>
+                        <!-- Learned: ... -->
+                        <li><strong>主要リソース：</strong>[書籍名E "Pythonではじめる機械学習 ―scikit-learn、Keras、TensorFlowによる実践プログラミング"],
+                            Kaggleコンペティション。</li> <!-- Key Resources: ... -->
+                        <li><strong>期間：</strong> YYYY年MM月 - 現在</li> <!-- Period: ... -->
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h4>第4フェーズ（進行中・将来の目標）：専門分野の深化と応用</h4>
+                    <!-- Phase 4 (Ongoing & Future Goals): Specialization & Application -->
+                    <ul>
+                        <li><strong>注力分野：</strong>深層学習 (TensorFlow/PyTorch)、自然言語処理 (NLP)、時系列分析、クラウドプラットフォーム (AWS/GCP)
+                            でのMLOps。</li> <!-- Focusing on: ... -->
+                        <li><strong>目標：</strong>Kaggleコンペティションでの上位入賞、オープンソースのデータサイエンスプロジェクトへの貢献、実世界のビジネス課題解決へのスキル応用。
+                        </li> <!-- Goals: ... -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="learning-outputs" class="container fade-in-section">
+            <h3>学習の成果と貢献</h3> <!-- Learning Outputs & Contributions -->
+            <ul id="learning-outputs-list">
+                <li>
+                    <strong>Kaggleプロフィールと公開ノートブック：</strong>
+                    <a href="[あなたのKaggleプロフィールURL]" target="_blank" rel="noopener noreferrer"
+                        class="external-link">私のKaggleプロフィールと公開ノートブックを見る</a>
+                    <p>積極的にコンペティションに参加し、分析ノートブックを共有しています。(例：タイタニックコンペティションのEDAとベースラインモデル)</p>
+                </li>
+                <li>
+                    <strong>GitHubリポジトリ：</strong>
+                    <a href="[あなたのGitHubプロフィールURL]" target="_blank" rel="noopener noreferrer"
+                        class="external-link">私のGitHubリポジトリを見る</a>
+                    <p>個人プロジェクト、学習用演習、分析コードなどを公開しています。主なリポジトリは以下の通りです：</p>
+                    <ul>
+                        <li><a href="[特定のリポジトリURL1]" target="_blank">[リポジトリ名1]: [簡単な説明]</a></li>
+                        <li><a href="[特定のリポジトリURL2]" target="_blank">[リポジトリ名2]: [簡単な説明]</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>ブログ記事など (もしあれば)：</strong>
+                    <a href="[あなたのブログURL]" target="_blank" rel="noopener noreferrer"
+                        class="external-link">[ブログ名/プラットフォーム名]で私の記事を読む</a>
+                    <p>データサイエンスに関する洞察やチュートリアルを共有しています。(例：「データ前処理のための実践的Pandasガイド」)</p>
+                </li>
+                <li>
+                    <strong>取得資格 (もしあれば)：</strong>
+                    <p>[コース名A] ([プラットフォーム名]), [コース名B] ([プラットフォーム名])。関連する修了証はご要望に応じて提示可能です。</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="future-goals" class="container fade-in-section">
+            <h3>将来の展望と継続的な学習</h3> <!-- Future Aspirations & Continuous Learning -->
+            <p>
+                私のデータサイエンスの旅は、継続的な学習と進化の道のりです。現在は特に[特定の機械学習分野や技術、例：自然言語処理とその感情分析への応用]に関する専門知識を深めています。
+                私は、[あなたの目指す業界や具体的な貢献分野、例：顧客体験の最適化やレコメンデーションのパーソナライズ化によるEコマース分野]において、データを活用してイノベーションを推進し、複雑な課題を解決することに情熱を注いでいます。
+            </p>
+            <p>
+                データサイエンスコミュニティとの積極的な関わり、新しいツールや方法論の探求、そして自身の限界を押し上げるような挑戦的なプロジェクトへの取り組みを通じて、この急速に進歩する分野の最前線に立ち続けることを目指しています。
+            </p>
+            <p class="text-center mt-2"><a href="contact.html" class="cta-button">繋がり、共に創造しましょう！</a></p>
+            <!-- Let's Connect & Collaborate! -->
+        </section>
+        <!-- PAGE CONTENT END -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Yun. All Rights Reserved.</p> <!-- あなたの名前に変更 -->
+            <div class="social-links">
+                <!-- 例: SNSリンク (Font Awesome使用想定) -->
+                <!-- <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a> -->
+                <!-- <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a> -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

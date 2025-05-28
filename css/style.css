@@ -1,0 +1,1210 @@
+/* css/style.css */
+
+/* --- グローバル設定とフォント --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+    /* ベースカラー (知的・信頼感) */
+    --primary-color: #0A2647;
+    /* データサイエンスらしい濃いブルー */
+    --secondary-color: #144272;
+    /* やや明るいブルー */
+    --accent-color-base: #205295;
+    /* ブルー系アクセント */
+    --highlight-color-base: #2C74B3;
+    /* 明るめのブルー */
+
+    --text-color: #EAFDFC;
+    /* 明るいテキストカラー (青緑系) */
+    --text-color-darker: #B0C4DE;
+    /* やや暗めのテキスト (補助情報用) */
+    --text-color-on-accent: #071930;
+    /* アクセントカラー上の濃いテキスト */
+    --bg-color: #071930;
+    /* 暗めの背景 */
+    --light-bg-color: #1B263B;
+    /* やや明るい背景 (コンテナなど) */
+
+    /* 新しい明るいアクセントカラー */
+    --accent-yellow: #FFD700;
+    /* ゴールドに近いイエロー */
+    --accent-pink: #FF69B4;
+    /* ホットピンク */
+    --accent-cyan-bright: #00FFFF;
+    /* 明るいシアン */
+    --accent-coral: #FF7F50;
+    /* コーラルピンク (ピンクの代替案) */
+
+
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    /* 見出しなど */
+
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* スムーズスクロールを有効に */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- タイポグラフィ --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    /* 画面幅に応じてフォントサイズ変更 */
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-top: 2.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent-yellow);
+    color: var(--accent-cyan-bright);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--accent-pink);
+    /* H3はピンク系 */
+}
+
+h4 {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--highlight-color-base);
+}
+
+p {
+    margin-bottom: 1.2rem;
+    color: var(--text-color-darker);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+}
+
+a {
+    color: var(--accent-cyan-bright);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--accent-yellow);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- レイアウトコンテナ --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* --- ナビゲーション --- */
+header {
+    background: rgba(10, 38, 71, 0.85);
+    /* 半透明 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari用 */
+    color: #fff;
+    padding: 1.2rem 0;
+    position: sticky;
+    /* スクロールに追従 */
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-yellow);
+    /* ロゴにイエロー */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: var(--border-radius-lg);
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::before {
+    /* ホバー時の下線アニメーション */
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    /* 少し下にオフセット */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-yellow);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    /* script.jsでactiveクラスを付与 */
+    color: var(--accent-yellow);
+}
+
+nav ul li a:hover::before,
+nav ul li a.active::before {
+    width: 70%;
+}
+
+/* --- ヒーローセクション --- */
+#hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(10, 38, 71, 0.9) 0%, rgba(20, 66, 114, 0.8) 60%, rgba(44, 116, 179, 0.7) 100%),
+        url('../images/hero-background.jpg') no-repeat center center/cover;
+    /* 背景画像パス */
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    /* 背景のパーティクル風アニメーション (オプション) */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--accent-cyan-bright) 0.5px, transparent 0.5px);
+    background-size: 25px 25px;
+    /* パーティクルの密度 */
+    opacity: 0.08;
+    /* かなり薄く */
+    animation: particleMove 80s linear infinite;
+    /* ゆっくり動かす */
+    pointer-events: none;
+    /* クリックイベントを透過 */
+}
+
+@keyframes particleMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 1200px 600px;
+    }
+
+    /* 動く距離 */
+}
+
+#hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 25px rgba(0, 255, 255, 0.4);
+    /* シアンのグロー */
+    animation: fadeInDown 1s ease-out, glowShine 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowShine {
+    from {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 35px rgba(0, 255, 255, 0.5);
+    }
+}
+
+#hero .subtitle {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    margin-bottom: 1.5rem;
+    max-width: 750px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 1s ease-out 0.3s;
+    animation-fill-mode: backwards;
+    /* アニメーション開始前に非表示 */
+}
+
+#hero .catchphrase {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: bold;
+    color: var(--accent-yellow);
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeInUp 1s ease-out 0.6s;
+    animation-fill-mode: backwards;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* --- ボタン --- */
+.cta-button {
+    /* Call To Action メインボタン */
+    display: inline-block;
+    background: linear-gradient(45deg, var(--accent-pink), var(--accent-yellow));
+    color: var(--text-color-on-accent);
+    /* ボタン上の文字は濃い色 */
+    padding: 15px 35px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    /* 完全な丸み */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+    /* ピンク系の影 */
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+    /* イエロー系の影 */
+}
+
+.cta-button-secondary {
+    /* サブボタン */
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent-cyan-bright);
+    padding: 12px 30px;
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    font-weight: 500;
+    border: 2px solid var(--accent-cyan-bright);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--accent-cyan-bright);
+    color: var(--text-color-on-accent);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+
+/* --- Aboutページ / プロフィール写真 --- */
+.profile-intro {
+    /* ホームページの概要紹介部分 */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 1.5rem;
+}
+
+.text1 {
+    width: 90%;
+}
+
+.profile-photo-circular {
+    /* 共通の円形プロフィール写真スタイル */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* 円形にする */
+    object-fit: cover;
+    /* 画像の比率を保ちつつコンテナを埋める */
+    border: 4px solid var(--highlight-color-base);
+    /* フレーム */
+    box-shadow: 0 0 20px rgba(44, 116, 179, 0.6);
+    /* 影 */
+}
+
+/* 個別のサイズ調整は各ページで */
+.profile-photo-small-circular {
+    /* ホームページ用 */
+    width: 120px;
+    height: 120px;
+    /* .profile-photo-circular のスタイルを継承しつつ上書き */
+}
+
+.profile-photo-large-circular {
+    /* Aboutページ用 */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem auto;
+    /* Aboutページで中央寄せ */
+}
+
+/* Aboutページ専用タイムライン */
+.timeline {
+    margin-top: 2rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    /* ドットの中心に合わせる */
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--highlight-color-base);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    padding-left: 25px;
+    position: relative;
+}
+
+.timeline-item::before {
+    /* 各アイテムのドット */
+    content: '';
+    position: absolute;
+    left: -8px;
+    /* 縦線の上 */
+    top: 5px;
+    /* テキストとの垂直位置調整 */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    /* 背景色でドットの中を抜く */
+    border: 4px solid var(--accent-yellow);
+    /* ドットの枠をイエローに */
+    z-index: 1;
+    /* 線より手前に */
+}
+
+.timeline-item h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item.current-focus h4 {
+    color: var(--accent-yellow);
+}
+
+.personality ul li::before {
+    /* Aboutページの人物像リスト */
+    content: "🎯";
+    /* または ✨, 💡 など */
+    color: var(--accent-pink);
+    /* 他のスタイルは以前の回答を参照 */
+}
+
+/* --- Skillsセクション --- */
+.skills-grid {
+    /* ホームページのスキルハイライト用 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-item {
+    /* ホームページとSkillsページ共通のスキルカード */
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border-left: 5px solid transparent;
+    /* ホバー用 */
+}
+
+.skill-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--accent-color-base);
+    border-left-color: var(--accent-yellow);
+}
+
+.skill-item i {
+    /* Font Awesomeなどのアイコン */
+    font-size: 3rem;
+    color: var(--accent-cyan-bright);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.skill-item h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.skill-item p {
+    font-size: 0.9rem;
+    color: var(--text-color-darker);
+}
+
+/* Skillsページ用: スキルバー */
+.skill-category {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.skill-category h3 {
+    /* カテゴリ名 (Python & Data Scienceなど) */
+    color: var(--accent-cyan-bright);
+    /* カテゴリタイトルはシアン */
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category h3 i {
+    /* カテゴリアイコン */
+    margin-right: 10px;
+    font-size: 1.5em;
+    color: var(--accent-cyan-bright);
+}
+
+.skill-bar-container {
+    margin-bottom: 1rem;
+}
+
+.skill-bar-container p {
+    /* スキル名 (Pandasなど) */
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: var(--primary-color);
+    /* バーの背景 */
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    height: 20px;
+    /* バーの高さ */
+}
+
+.skill-level {
+    /* 実際のスキルレベルを示すバー */
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow));
+    /* グラデーション */
+    color: var(--text-color-on-accent);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* テキストを右寄せ */
+    padding-right: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: var(--border-radius-sm);
+    white-space: nowrap;
+    transition: width 1s ease-in-out;
+    /* 幅のアニメーション */
+}
+
+.skill-description {
+    /* 各スキルカテゴリの説明文 */
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color-darker);
+}
+
+/* --- Projectsセクション --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* カード最小幅調整 */
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: var(--shadow-lg);
+}
+
+.project-card img {
+    /* プロジェクトサムネイル */
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card-content {
+    /* カード内のテキスト部分 */
+    padding: 1.5rem;
+    flex-grow: 1;
+    /* カードの高さを揃えるため */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card-content h3 {
+    /* プロジェクトタイトル */
+    font-size: 1.5rem;
+    color: var(--accent-yellow);
+    margin-bottom: 0.75rem;
+}
+
+.project-card-content p {
+    /* プロジェクト説明 */
+    font-size: 0.95rem;
+    color: var(--text-color-darker);
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.project-card-content .technologies {
+    /* 使用技術 */
+    font-size: 0.85rem;
+    color: var(--accent-cyan-bright);
+    margin-bottom: 1.2rem;
+    font-style: italic;
+}
+
+.project-card .details-link {
+    /* 詳細を見るボタン */
+    display: block;
+    text-align: center;
+    padding: 0.9rem;
+    background-color: var(--accent-color-base);
+    color: #fff;
+    font-weight: bold;
+    margin-top: auto;
+    /* ボタンをカード下部に固定 */
+    border-bottom-left-radius: var(--border-radius-md);
+    /* カードの角丸に合わせる */
+    border-bottom-right-radius: var(--border-radius-md);
+    border-top-left-radius: 0;
+    /* 上の角丸はなし */
+    border-top-right-radius: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card .details-link:hover {
+    background: linear-gradient(45deg, var(--accent-pink), var(--accent-yellow));
+    color: var(--text-color-on-accent);
+}
+
+/* --- Data Science Journeyプロモーション (ホームページ) --- */
+#ds-journey-promo {
+    /* ホームページのDS Journeyへの誘導セクション */
+    text-align: center;
+}
+
+.ds-promo-bg {
+    /* 背景スタイル */
+    background: linear-gradient(to right, var(--accent-color-base), var(--highlight-color-base));
+    color: #fff;
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius-md);
+}
+
+.ds-promo-bg h2 {
+    color: #fff;
+    /* このセクション内のh2は白 */
+    border-bottom: 2px solid var(--accent-yellow);
+    /* 下線をイエローに */
+}
+
+.ds-promo-bg .cta-button-secondary {
+    /* ボタンのスタイル調整 */
+    border-color: #fff;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.ds-promo-bg .cta-button-secondary:hover {
+    background-color: #fff;
+    color: var(--accent-color-base);
+}
+
+/* Data Science Journey ページ用 */
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.roadmap-phase {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-sm);
+}
+
+.roadmap-phase h4 {
+    color: var(--accent-yellow);
+    /* 他のスタイルは以前の回答を参照 */
+}
+
+#learning-outputs ul li::before {
+    content: "💡";
+    /* または ✅, 📖 */
+    color: var(--accent-pink);
+    /* 他のスタイルは以前の回答を参照 */
+}
+
+
+/* --- 分析結果表示ページ用 (titanic_analysis.html, economic_analysis.html) --- */
+.analysis-content {
+    padding: 20px;
+}
+
+.analysis-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.analysis-section h2 {
+    /* 分析ページのH2は統一感を出す */
+    color: var(--accent-cyan-bright);
+    border-bottom: 3px solid var(--accent-yellow);
+}
+
+.analysis-section h3 {
+    /* 分析ページのH3 */
+    color: var(--accent-pink);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.analysis-section img {
+    /* 分析グラフ画像 */
+    max-width: 95%;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    margin: 1rem auto;
+    display: block;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--accent-color-base);
+}
+
+.analysis-section p,
+.analysis-section ul {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-color-darker);
+}
+
+.analysis-section ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.analysis-section li {
+    margin-bottom: 0.5rem;
+}
+
+.key-findings-list li {
+    /* 分析ページの主要な発見リスト */
+    background-color: var(--bg-color);
+    padding: 10px 15px;
+    border-left: 4px solid var(--accent-yellow);
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-color);
+}
+
+.key-findings-list li strong {
+    color: var(--accent-pink);
+}
+
+/* --- Contactページ フォーム --- */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    /* パディングを増やす */
+    margin-bottom: 1.5rem;
+    /* マージンを増やす */
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.25);
+    /* フォーカス時の影 */
+}
+
+#contact-form textarea {
+    min-height: 150px;
+    /* テキストエリアの最小高さ */
+    resize: vertical;
+    /* 垂直方向のみリサイズ可能 */
+}
+
+#contact-form button[type="submit"] {
+    /* 送信ボタンはメインCTAボタンと同じスタイル */
+    /* .cta-button のスタイルをコピーまたは@extendで継承 (Sassの場合) */
+    /* ここでは主要なスタイルを再定義 */
+    display: inline-block;
+    background: linear-gradient(45deg, var(--accent-pink), var(--accent-yellow));
+    color: var(--text-color-on-accent);
+    padding: 15px 35px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+#contact-form button[type="submit"]:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+}
+
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    /* パディング調整 */
+    background-color: var(--primary-color);
+    /* ベースの濃い青 */
+    color: var(--text-color-darker);
+    /* やや暗めのテキスト */
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.social-links a {
+    /* SNSリンクなどがあれば */
+    margin: 0 10px;
+    color: var(--text-color-darker);
+    font-size: 1.5rem;
+    /* アイコンサイズ */
+}
+
+.social-links a:hover {
+    color: var(--accent-yellow);
+}
+
+/* --- ユーティリティ --- */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 992px) {
+
+    /* タブレットサイズ */
+    nav .logo {
+        font-size: 1.8rem;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* スマホサイズ */
+    nav {
+        flex-direction: column;
+        /* ロゴとナビを縦積み */
+        align-items: center;
+    }
+
+    nav .logo {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        /* リンク領域を広げる */
+        padding: 10px;
+    }
+
+    #hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    #hero .subtitle {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    #hero .catchphrase {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .roadmap-grid {
+        grid-template-columns: 1fr;
+        /* 1カラム表示 */
+    }
+
+    .profile-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* フェードインアニメーション (スクロール連動はJSでクラス付与) */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* css/style.css の末尾に追加 */
+
+/* --- 分析結果表示ページ用 (titanic_analysis.html, economic_analysis.html など共通) --- */
+.analysis-content {
+    /* .containerクラスと併用される想定なので、
+    特別なスタイルが必要なければ、このクラスの定義自体が不要な場合もあります。
+       もし .container の padding とは別に調整したい場合はここに記述します。 */
+    /* 例: padding-top: 0; など */
+}
+
+.analysis-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    /* セクション内の余白 */
+    background-color: var(--secondary-color);
+    /* 変数が未定義なら #144272 など */
+    border-radius: var(--border-radius-md);
+    /* 変数が未定義なら 12px など */
+    box-shadow: var(--shadow-md);
+    /* 変数が未定義なら 0 8px 25px rgba(0,0,0,0.15) など */
+}
+
+/* 分析ページのH2は、メインのH2スタイルを継承しつつ、
+もし異なるスタイルにしたい場合のみ、ここで上書きします。
+   現状のstyle.cssのH2定義で問題なければ、以下の定義は不要な場合があります。 */
+.analysis-section h2 {
+    /* color: var(--accent-cyan-bright); */
+    /* style.cssの共通H2スタイルと同じなら不要 */
+    /* border-bottom: 3px solid var(--accent-yellow); */
+    /* style.cssの共通H2スタイルと同じなら不要 */
+    /* もし分析ページ専用のH2スタイルにしたい場合は、ここに記述 */
+    margin-top: 0;
+    /* analysis-section の最初のH2は上マージンを0にすることが多い */
+}
+
+/* 分析ページのH3も同様 */
+.analysis-section h3 {
+    /* color: var(--accent-pink); */
+    /* style.cssの共通H3スタイルと同じなら不要 */
+    /* もし分析ページ専用のH3スタイルにしたい場合は、ここに記述 */
+    margin-top: 2rem;
+    /* 上の区切り */
+}
+
+.analysis-section img {
+    /* 分析グラフ画像 */
+    max-width: 90%;
+    /* コンテナの90%まで */
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    /* 変数が未定義なら 6px など */
+    margin: 1.5rem auto;
+    /* 上下マージンと左右中央寄せ */
+    display: block;
+    /* 中央寄せのため */
+    box-shadow: var(--shadow-sm);
+    /* 変数が未定義なら 0 4px 10px rgba(0,0,0,0.1) など */
+    border: 1px solid var(--accent-color-base);
+    /* 変数が未定義なら #205295 など */
+}
+
+.analysis-section p,
+.analysis-section ul {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    /* 本文より少し小さめでも良い */
+    line-height: 1.7;
+    color: var(--text-color-darker);
+    /* 変数が未定義なら #B0C4DE など */
+}
+
+.analysis-section ul {
+    list-style: disc;
+    /* 通常の黒丸マーカー */
+    padding-left: 25px;
+    /* マーカーのための左余白 */
+}
+
+.analysis-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Key Findingsリストのスタイル (分析ページ共通) */
+.key-findings-list li {
+    background-color: var(--bg-color);
+    /* 変数が未定義なら #071930 など */
+    padding: 10px 15px;
+    border-left: 4px solid var(--accent-yellow);
+    /* 変数が未定義なら #FFD700 など */
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-color);
+    /* 変数が未定義なら #EAFDFC など */
+}
+
+.key-findings-list li strong {
+    /* strongタグで強調された部分 */
+    color: var(--accent-pink);
+    /* 変数が未定義なら #FF69B4 など */
+}
+
+/* css/style.css に追記するスタイルの例 */
+
+/* プロジェクト詳細ページの共通スタイル */
+.project-period {
+    font-style: italic;
+    color: var(--text-color-darker);
+    margin-bottom: 1.5rem;
+    font-size: 0.9em;
+}
+
+/* Webアプリ開発プロジェクト (project_a_details.html) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* レスポンシブなカラム */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+.feature-item {
+    background-color: var(--bg-color); /* 背景を少し暗くして区別 */
+    padding: 1.2rem;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--accent-pink); /* アクセントカラー */
+}
+.feature-item h4 {
+    color: var(--accent-cyan-bright);
+    margin-bottom: 0.5rem;
+    font-size: 1.2em;
+}
+.feature-item p {
+    font-size: 0.9em;
+    color: var(--text-color-darker);
+    margin-bottom: 0;
+}
+.feature-item i { /* Font Awesomeアイコンを使う場合 */
+    font-size: 1.5em;
+    color: var(--accent-pink);
+    margin-right: 10px;
+    vertical-align: middle; /* アイコンとテキストの縦位置調整 */
+}
+
+.screenshots-grid {
+    margin-top: 1rem;
+}
+.screenshots-grid img {
+    margin-bottom: 0.5rem; /* 画像とキャプションの間 */
+    border: 1px solid var(--secondary-color); /* 画像に枠線 */
+}
+.caption {
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--text-color-darker);
+    margin-bottom: 1.5rem;
+}
+
+
+/* ECサイト顧客行動分析プロジェクト (project_b_details.html) */
+/* こちらは既存の .analysis-section, .screenshots-grid などで十分かもしれませんが、
+   もし特有のスタイルが必要なら、同様に定義します。 */
+#project-b-visualizations .screenshots-grid img {
+    /* 必要なら project_b 専用の画像スタイル */
+}
+#project-b-results ul { /* 考察の箇条書き */
+    list-style-type: '✔ '; /* 絵文字やFontAwesomeでカスタムマーカー */
+    padding-left: 1.5em;
+}
+#project-b-results ul li {
+    margin-bottom: 0.8rem;
+}
+
+/* 共通の技術スタックリスト (もしあれば) */
+.tech-stack-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap; /* 折り返し */
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+.tech-stack-list li {
+    background-color: var(--accent-color-base);
+    color: var(--text-color);
+    padding: 5px 12px;
+    border-radius: var(--border-radius-lg);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.tech-stack-list li strong { /* 「バックエンド:」などの部分 */
+    color: var(--accent-yellow);
+    margin-right: 5px;
+}

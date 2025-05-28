@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイタニック号データセット分析 - Yun ポートフォリオ</title> <!-- 日本語タイトル -->
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet"> <!-- Noto Sans JP追加 -->
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Data Driven</a>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">私について</a></li>
+                <li><a href="skills.html">スキル</a></li>
+                <li><a href="projects.html">プロジェクト</a></li>
+                <li><a href="data-science-journey.html">学習の軌跡</a></li>
+                <li><a href="experience.html">職務経歴</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container analysis-content">
+            <section id="titanic-intro" class="analysis-section fade-in-section">
+                <h2>タイタニック号データセット分析：生存要因の解明</h2>
+                <p>
+                    このプロジェクトでは、Kaggleの有名なタイタニック号データセットを用いた探索的データ分析（EDA）を行いました。
+                    主な目的は、タイタニック号の悲劇的な沈没事故において、乗客の生存に影響を与えた要因を調査することです。
+                    客室クラス、性別、年齢、同乗していた家族の人数といった乗客の特徴を分析することで、生存に関連するパターンや洞察を明らかにすることを目指しました。
+                </p>
+                <p>
+                    <strong>使用ツール：</strong> Python (Pandas, NumPy, Matplotlib, Seaborn)
+                </p>
+                <p>
+                    <strong>データソース：</strong> <a href="https://www.kaggle.com/c/titanic" target="_blank"
+                        rel="noopener noreferrer">Kaggle タイタニック号コンペティション</a>
+                </p>
+            </section>
+
+            <section id="data-overview" class="analysis-section fade-in-section">
+                <h2>データの概要と準備</h2>
+                <p>データセットには、乗客に関する以下の情報が含まれています：</p>
+                <ul>
+                    <li><strong>Survived (生存状況)：</strong> 目的変数 (0 = 死亡, 1 = 生存)</li>
+                    <li><strong>Pclass (客室クラス)：</strong> チケットの等級 (1 = 1等, 2 = 2等, 3 = 3等)</li>
+                    <li><strong>Sex (性別)：</strong> 乗客の性別</li>
+                    <li><strong>Age (年齢)：</strong> 乗客の年齢（歳）</li>
+                    <li><strong>SibSp (兄弟姉妹/配偶者の数)：</strong> タイタニック号に同乗していた兄弟姉妹または配偶者の人数</li>
+                    <li><strong>Parch (親/子供の数)：</strong> タイタニック号に同乗していた親または子供の人数</li>
+                    <li><strong>Ticket (チケット番号)：</strong> チケットの番号</li>
+                    <li><strong>Fare (運賃)：</strong> 乗客が支払った運賃</li>
+                    <li><strong>Cabin (客室番号)：</strong> 客室の番号</li>
+                    <li><strong>Embarked (乗船港)：</strong> 乗船した港 (C = シェルブール, Q = クイーンズタウン, S = サウサンプトン)</li>
+                </ul>
+                <p>
+                    初期のデータ準備では、欠損値の処理を行いました。「年齢(Age)」の欠損値は中央値で補完しました。
+                    「乗船港(Embarked)」の少数の欠損値は最頻値で補完しました。「客室番号(Cabin)」は欠損値が非常に多かったため、その情報が存在するかどうかを「客室情報有無(Cabin_Known)」という二値特徴量に変換し、生存への影響を評価しました。
+                </p>
+            </section>
+
+            <section id="eda-results" class="analysis-section fade-in-section">
+                <h2>探索的データ分析（EDA）と可視化</h2>
+                <p>以下の可視化は、データから見出された主要な関連性を示しています。</p>
+
+                <h3>1. 全体の生存率</h3>
+                <img src="images/titanic_analysis/titanic_survival_overall.png" alt="全体の生存者数と死亡者数">
+                <p>全体の生存率は約38.38%でした。残念ながら、生存しなかった乗客の方が多い結果となりました。</p>
+
+                <h3>2. 性別と生存率</h3>
+                <img src="images/titanic_analysis/titanic_survival_by_sex.png" alt="性別毎の生存率">
+                <p>女性の生存率は約74.20%と、男性の約18.89%と比較して著しく高い結果でした。これは、海難事故の際にしばしば守られる「女性と子供を先に」という原則を強く裏付けています。</p>
+
+                <h3>3. 客室クラス (Pclass) と生存率</h3>
+                <img src="images/titanic_analysis/titanic_survival_by_pclass.png" alt="客室クラス毎の生存率">
+                <p>1等客室の乗客の生存率が最も高く（約62.96%）、次いで2等客室（約47.28%）、3等客室の乗客の生存率が最も低い（約24.24%）結果でした。これは、社会経済的地位が生存に重要な役割を果たしたことを示唆しており、救命ボートへのアクセスやデッキの階層などが影響したと考えられます。
+                </p>
+
+                <h3>4. 年齢分布と生存</h3>
+                <img src="images/titanic_analysis/titanic_age_distribution_survival.png" alt="年齢分布と生存状況">
+                <img src="images/titanic_analysis/titanic_survival_by_agegroup.png" alt="年齢層毎の生存率">
+                <p>幼い子供（特に12歳未満）は顕著に高い生存率を示しました。成人においては年齢とともに生存率が低下する一般的な傾向が見られる一方、高齢の乗客（60歳以上）の生存率は特に低い結果でした。</p>
+
+                <h3>5. 家族の人数 (SibSp, Parch, および合計) と生存率</h3>
+                <img src="images/titanic_analysis/titanic_survival_by_sibsp.png" alt="同乗の兄弟姉妹/配偶者の数と生存率">
+                <img src="images/titanic_analysis/titanic_survival_by_parch.png" alt="同乗の親/子供の数と生存率">
+                <img src="images/titanic_analysis/titanic_survival_by_familysize.png" alt="家族の合計人数と生存率">
+                <p>
+                    少人数の家族（他の家族1～3人、合計2～4人規模）と旅行していた乗客は、単独の乗客や非常に大人数の家族と比べて生存率が高い傾向にありました。
+                    これは、互いの助け合いや、少人数の家族ユニットが優先的に避難できた可能性などが考えられます。単独または非常に大人数（5人以上）の家族の生存率は低い結果でした。
+                </p>
+
+                <h3>6. 運賃 (Fare) と生存率</h3>
+                <img src="images/titanic_analysis/titanic_fare_distribution_survival.png" alt="運賃の分布と生存状況">
+                <p>支払われた運賃と生存の間には、明確な正の相関が見られました。より高い運賃を支払った乗客（多くの場合、より高い客室クラスや良い場所の客室を示唆します）ほど、生存する可能性が高い結果でした。運賃の分布を見ると、高額な運賃の層は主に生存者に集中していました。
+                </p>
+
+                <h3>7. 乗船港 (Embarked) と生存率</h3>
+                <img src="images/titanic_analysis/titanic_survival_by_embarked.png" alt="乗船港毎の生存率">
+                <p>シェルブール（C）から乗船した乗客は、クイーンズタウン（Q）（約38.96%）やサウサンプトン（S）（約33.70%）から乗船した乗客と比較して、生存率が高い（約55.36%）結果でした。これは、シェルブールからの乗客に1等客室の割合が高かったことと関連している可能性があります。
+                </p>
+
+                <h3>8. 客室情報の有無と生存率</h3>
+                <img src="images/titanic_analysis/titanic_survival_by_cabin_known.png" alt="客室情報の有無と生存率">
+                <p>客室情報が記録されていた乗客は、情報が不明だった乗客（約29.99%）と比較して、著しく高い生存率（約66.67%）を示しました。客室情報が判明していることは、より高い客室クラスや運賃と強く相関しており、それらが救命ボートへのアクセスの良さや上層デッキの客室位置に繋がったと考えられます。
+                </p>
+
+            </section>
+
+            <section id="key-findings" class="analysis-section fade-in-section">
+                <h2>主要な発見と結論</h2>
+                <p>タイタニック号データセットの探索的データ分析から、生存と強く関連するいくつかの主要な要因が明らかになりました：</p>
+                <ul class="key-findings-list">
+                    <li><strong>性別：</strong> 「女性と子供を先に」という方針を反映し、女性は男性よりもはるかに生存する可能性が高かった。</li>
+                    <li><strong>客室クラス (Pclass)：</strong> より高い等級の客室（1等 > 2等 > 3等）は、生存の可能性を著しく高め、強い社会経済的影響を示した。</li>
+                    <li><strong>年齢：</strong> 幼い子供は生存率が高く、高齢者は低かった。成人の生存者の多くは若年層から中年層であった。</li>
+                    <li><strong>家族の人数：</strong> 少人数の家族（2～4人）との同乗は、単独または非常に大人数の家族よりも有利であった。</li>
+                    <li><strong>運賃と客室情報：</strong> より高い運賃と判明している客室情報（多くはより良い客室クラスや上層デッキの客室位置と関連）は、生存確率の高さを示す強力な指標であった。
+                    </li>
+                    <li><strong>乗船港：</strong> シェルブール（C）から乗船した乗客は、おそらく同港からの1等客室乗客の割合が高かったため、より高い生存率を示した。</li>
+                </ul>
+                <p>
+                    これらの発見は、タイタニック号の生存者を決定づけた社会経済的地位、人口統計学的要因、そして状況的要因の複雑な相互作用を浮き彫りにしています。
+                    「女性と子供を先に」という原則は明白でしたが、富と階級もまた重要な役割を果たしました。
+                    この探索的データ分析は、これらの乗客特徴に基づいて生存確率を推定する予測的な機械学習モデルを構築するための強固な基盤を提供します。
+                </p>
+                <p class="text-center mt-2">
+                    <a href="projects.html" class="cta-button-secondary">← プロジェクト一覧へ戻る</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Yun. All Rights Reserved.</p>
+            <!-- 必要であればSNSリンクなどを追加 -->
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
